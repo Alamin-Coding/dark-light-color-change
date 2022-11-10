@@ -1,0 +1,376 @@
+* {
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+:root{
+    --bs-dark: #212529;
+    --theme: #1B2430;
+    --heading-2: #111;
+    --heading: #000;
+    --para: #444;
+    --theme-button: #333;
+    --theme-white: #fff;
+    --theme: #1b2430;
+    --red: red;
+    --green: green;
+    --blue: blue;
+    --orange: orange;
+    --purple: purple;
+    --peru: peru;
+    --violet: #712cf9;
+    --olive: olive;
+    --white: white;
+}
+nav.navbar{
+  background: var(--violet);
+}
+.w-100 {
+  width: 100%;
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+section {
+  padding: 50px 0;
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>
+    Preloader Start
+<<<<<<<<<<<<<<<<<<<<<<< */
+.preloaderDiv{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: transparent;
+  z-index: 9999;
+  /* transition: all .2s linear; */
+}
+
+.preloaderDiv .left{
+  width: 50%;
+  height: 100vh;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  transition: all linear .3s;
+  animation-name: left;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease 0s;
+  animation-delay: 3s;
+}
+.animation_line{
+  width: 2px;
+  height: 0;
+  background: #000000;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 9999;
+  animation-name: line;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease 0s;
+}
+@keyframes line {
+  0%{
+    height: 0%;
+  }
+  30%{
+    height: 30%;
+  }
+  80%{
+    height: 35%;
+    background: #000000;
+  }
+  100%{
+    height: 99%;
+    background: #1b243081;
+  }
+}
+
+@keyframes left {
+  0%{
+    width: 50%;
+  }
+  100%{
+    width: 00%;
+  }
+}
+@keyframes right {
+  0%{
+    width: 50%;
+  }
+  100%{
+    width: 0%;
+  }
+}
+.preloaderDiv .right{
+  width: 50%;
+  height: 100vh;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  transition: all linear .3s;
+  animation-name: right;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease 0s;
+  animation-delay: 3s;
+}
+/* >>>>>>>>>>>>>>>>>>>>>>
+    Preloader End
+<<<<<<<<<<<<<<<<<<<<<< */
+
+
+/* #body {
+  background: var(--theme);
+} */
+
+/* Light mode dark mode start */
+label {
+  align-self: center;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 999;
+  cursor: pointer;
+}
+
+#button {
+	/* transform: scaleX(-1); */
+	display: flex;
+    padding: 5px;
+	width: 80px;
+    border-radius: 50px;
+
+	background: url(../images/light.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.circle {
+    align-self: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    border: 4px solid #fff;
+    transition: 0.5s;
+    background: #fff;
+    margin-left: calc(100% - 30px);
+}
+
+input {
+	display: none;
+}
+
+#dm:checked ~ .circle {
+	margin-left: 0%;
+	transition: 0.5s;
+}
+
+#dm:checked ~ #button {
+	background: #1c3d4f;
+}
+/* Light mode dark mode end */
+
+/* Color change start */
+.multi_color {
+  display: flex;
+  align-items: center;
+  /* width: 220px; */
+  background: #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  position: fixed;
+  right: 0;
+  transform: translateX(calc(100% - 65px));
+  top: 44px;
+  z-index: 99;
+  transition: all linear .3s;
+}
+.gear_icon {
+  min-width: 50px;
+  height: 50px;
+  background: black;
+  padding: 5px;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.gear_icon i,svg{
+  animation: rotate 60s linear infinite;
+}
+@keyframes rotate {
+  0%{
+    transform: rotate(0deg);
+  }
+  0%{
+    transform: rotate(9000deg);
+  }
+}
+.color_plate {
+  padding: 5px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.color_plate span {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.color_plate .violet {
+  background: #712cf9;
+}
+.color_plate .red {
+  background: red;
+}
+.color_plate .green {
+  background: green;
+}
+.color_plate .blue {
+  background: blue;
+}
+.color_plate .orange {
+  background: orange;
+}
+.color_plate .purple {
+  background: purple;
+}
+.color_plate .peru {
+  background: peru;
+}
+.color_plate .olive {
+  background: olive;
+}
+/* Color change end */
+
+h2 {
+  color: var(--heading-2);
+}
+h1 {
+  color: var(--heading);
+}
+p {
+  color: var(--para);
+}
+button {
+  background: var(--theme-button);
+  color: var(--theme-white);
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid var(--olive);
+}
+
+/* Slider Start */
+.my_slider .slide-item {
+  margin: 0 10px;
+}
+.my_slider .slide-item .image {
+  height: 500px;
+}
+.my_slider .slide-item .image img {
+  height: 100%;
+  object-fit: cover;
+}
+.my_slider .slide-item.slick-active.slick-center {
+  border-radius: 16px;
+  color: #fff;
+  font-size: 30px;
+}
+.my_slider .item-1 {
+  background: green;
+}
+.my_slider .item-2 {
+  background: blue;
+}
+.my_slider .item-3 {
+  background: purple;
+}
+.my_slider .item-4 {
+  background: peru;
+}
+
+
+.my_slider .prev_arr {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: red;
+  font-size: 15px;
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+  z-index: 100;
+  cursor: pointer;
+}
+.my_slider .next_arr {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: red;
+  font-size: 15px;
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  z-index: 100;
+  cursor: pointer;
+}
+.my_slider .slick-dots {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -30px;
+}
+.my_slider .slick-dots li {
+  width: 15px;
+  height: 15px;
+  background: blue;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  float: left;
+}
+.my_slider .slick-dots li.slick-active {
+  background: transparent;
+  border: 1px solid blue;
+}
+.my_slider .slick-dots li button {
+  display: none;
+}
+
+/* Slider End */
