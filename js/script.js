@@ -5,7 +5,19 @@ setTimeout(()=> {
 },3800)
 
 
-
+// Custom cursor start
+let cursor = document.querySelector(".cursor");
+document.addEventListener('mousemove', e => {
+    if (e.pageY < 10 || e.pageX < 10) {
+        cursor.style.opacity = "0"
+    } else {
+        cursor.style.opacity = "1"
+        cursor.style.top = `${e.pageY-10}px`;
+        cursor.style.left = `${e.pageX-10}px`;
+    }
+    console.log(e);
+})
+// Custom cursor end
 
 
 const colors = document.querySelectorAll(".color_plate span");
