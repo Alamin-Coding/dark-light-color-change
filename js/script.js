@@ -16,15 +16,15 @@ document.addEventListener('mousemove', e => {
         cursor.style.left = `${e.pageX-10}px`;
     }
 })
-document.addEventListener('DOMMouseScroll', function(e){
-    console.log(e);
-    e.stopPropagation();
-    e.preventDefault();
-    e.cancelBubble = false;
-    cursor.style.top = `${e.screenY-10}px`;
-    cursor.style.left = `${e.screenX-10}px`;
-    return false;
- }, false);
+// document.addEventListener('DOMMouseScroll', function(e){
+//     cursor.style.top = `${e.pageY-10}px`;
+//     cursor.style.left = `${e.pageX-10}px`;
+//     console.log(e.screenX);
+//     console.log(e.screenY);
+//     e.stopPropagation();
+//     e.preventDefault();
+//     return false;
+//  });
 
 
 // Custom cursor end
