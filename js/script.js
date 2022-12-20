@@ -15,8 +15,18 @@ document.addEventListener('mousemove', e => {
         cursor.style.top = `${e.pageY-10}px`;
         cursor.style.left = `${e.pageX-10}px`;
     }
-    console.log(e);
 })
+document.addEventListener('DOMMouseScroll', function(e){
+    console.log(e);
+    e.stopPropagation();
+    e.preventDefault();
+    e.cancelBubble = false;
+    cursor.style.top = `${e.screenY-10}px`;
+    cursor.style.left = `${e.screenX-10}px`;
+    return false;
+ }, false);
+
+
 // Custom cursor end
 
 
@@ -27,9 +37,10 @@ var rootStyle = getComputedStyle(root);
 
 colorArr.map((item)=> {
     item.addEventListener("click", function(e){
-        if (rootStyle.getPropertyValue('--violet')) {
-            root.style.setProperty('--violet', e.target.dataset.color);
-        }
+        root.style.setProperty('--violet', e.target.dataset.color);
+        
+        // if (rootStyle.getPropertyValue('--violet')) {
+        // }
     })
 })
 
@@ -60,6 +71,14 @@ $(window).scroll((e)=> {
     }
 })
 // Multi Color End
+
+// Color code get by input tag
+let colorCode = document.querySelector('.color_code');
+colorCode.value.red
+function getColorCode(e) {
+    console.log(colorCode.value);
+    root.style.setProperty('--violet', colorCode.value);
+} 
 
 
 
